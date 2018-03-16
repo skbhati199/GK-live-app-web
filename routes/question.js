@@ -6,6 +6,7 @@ var Question = require('../models/Question.js');
 
 // GET ALL Questions
 router.get('/', function(req, res, next){
+    res.setHeader('Content-Type', 'application/json');
     Question.find(function(err, products){
         if(err) return next(err);
         res.json(products);
@@ -14,6 +15,7 @@ router.get('/', function(req, res, next){
 
 // GET Single Question by ID
 router.get('/:id', function(req, res, next) {
+    res.setHeader('Content-Type', 'application/json');
     Question.findById(req.params.id, function (err, post) {
       if (err) return next(err);
       res.json(post);
@@ -24,6 +26,7 @@ router.get('/:id', function(req, res, next) {
   
 /* SAVE Question */
 router.post('/', function(req, res, next) {
+    res.setHeader('Content-Type', 'application/json');
     Question.create(req.body, function (err, post) {
       if (err) return next(err);
       res.json(post);
@@ -32,6 +35,7 @@ router.post('/', function(req, res, next) {
   
   /* UPDATE Question */
   router.put('/:id', function(req, res, next) {
+    res.setHeader('Content-Type', 'application/json');
     Question.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
       if (err) return next(err);
       res.json(post);
@@ -40,6 +44,7 @@ router.post('/', function(req, res, next) {
   
   /* DELETE Question */
   router.delete('/:id', function(req, res, next) {
+    res.setHeader('Content-Type', 'application/json');
     Question.findByIdAndRemove(req.params.id, req.body, function (err, post) {
       if (err) return next(err);
       res.json(post);

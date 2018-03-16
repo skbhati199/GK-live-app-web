@@ -21,7 +21,7 @@ export class QuestionCreateComponent implements OnInit {
   }
 
   saveBook() {
-    this.http.post('/question', this.question)
+    this.http.post('/api/question', this.question)
       .subscribe(res => {
           let id = res['_id'];
           this.router.navigate(['/question-details', id]);

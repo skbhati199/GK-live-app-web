@@ -10,7 +10,7 @@ export class QuestionListComponent implements OnInit {
   questions : any;
   constructor(private http: HttpClient) { }
   ngOnInit() {
-    this.http.get('/question').subscribe(data => {
+    this.http.get('/api/question').subscribe(data => {
       this.questions = data;
     });
   }

@@ -6,15 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
-import { RouterModule, Routes } from '@angular/router';
 
-
-const appRoutes: Routes = [
-  { path: '',
-    redirectTo: '/questions',
-    pathMatch: 'full'
-  }
-];
 
 
 @NgModule({
@@ -24,11 +16,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
